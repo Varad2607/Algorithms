@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 using namespace std;
+////
 
 void daily_temp(int n,int temp[],int ans[]){
     stack<int> s;
