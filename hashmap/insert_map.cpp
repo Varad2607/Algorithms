@@ -1,24 +1,32 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <unordered_map>
 using namespace std;
 
-int main(){
-    map<string,int> fruitprices={{"apple", 50},{"bananna", 30},{"grapes", 100}};
+int main() {
+    map<string, int> fruitPrices;
+    string fruit;
+    int price;
+    int numFruits;
 
-    //Method 1 to traverse over map
-    //Pair here says that [key,value], so use pair to loop over dictionary
-    for(const auto& pair: fruitprices){
-        cout<<pair.first<<" has price"<<pair.second<<endl;
+    cout << "How many fruits do you want to enter? ";
+    cin >> numFruits;
+
+    for(int i = 0; i < numFruits; i++) {
+        cout << "Enter fruit name: ";
+        cin >> fruit;
+        cout << "Enter " << fruit << "'s price: ";
+        cin >> price;
+        fruitPrices[fruit] = price;
     }
-    //If using [key,value] then use cout<<key<<"has price"<<value<<endl;
 
-    //Method 2 to traverse over map
-    map<string,int> ::iterator it;
-    for(it=fruitprices.begin();it!=fruitprices.end();it++){
-        cout<<it->first<<" "<<it->second<<endl;
+    // Method 1 to traverse over map
+    for(const auto& pair: fruitPrices) {
+        cout << pair.first << " has price " << pair.second << endl;
     }
 
-   
+    // Method 2 to traverse over map
+    for(auto it = fruitPrices.begin(); it != fruitPrices.end(); it++) {
+        cout << it->first << " " << it->second << endl;
+    }
 }
