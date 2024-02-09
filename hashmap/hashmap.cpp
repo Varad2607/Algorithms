@@ -15,7 +15,9 @@ using namespace std;
     }
     map<int,int>mp;
     mp[8]=2;
-    cout<<mp[8]<<endl;;
+    cout<<mp[8]<<endl;
+    
+
 
 
 
