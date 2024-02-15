@@ -5,6 +5,7 @@
 using namespace std;
 
 vector<int> dailyTemperatures(vector<int>& temperatures) {
+    // Initialize the answer vector with zeros
     int n = temperatures.size();
     vector<int> answer(n, 0);  // Initialize the answer vector with zeros
     stack<int> stack;  // Stack to keep track of temperatures indices
