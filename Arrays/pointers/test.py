@@ -22,25 +22,8 @@ def main():
     print(name[:]) #print whole string
     print(name[-1]) #print last character
     print(name[0:-2]) # this prints from 0 to 3
+
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
