@@ -8,7 +8,7 @@ class student{
     string name;
     int age;
     bool gender;
-
+    //Default constructor
     student(){
         cout<<"Default constructor"<<endl;
     }
@@ -18,6 +18,13 @@ class student{
     student(string s){
         name = s;
     }
+
+    //Copy constructor
+    student(student &a){
+        cout<<"Copy constructor"<<endl;
+        name = a.name;
+        age = a.age
+     }
     void getName(){
         cout<<name<<endl;
     }
@@ -40,7 +47,7 @@ int main(){
 
     // }
     student a("Rahul");
-    a.getName
+    a.getName;
 
     return 0;
 }
