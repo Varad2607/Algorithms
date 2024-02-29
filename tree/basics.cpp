@@ -6,43 +6,34 @@ class node{
     int data;
     node* left;
     node* right;
-    node(int d){
-        this->data = d; 
-        this->left = NULL;
-        this->right = NULL;
+
+    node(int val){
+        this->data=val;
+        this->left=NULL;
+        this->right=NULL;
     }
 
 };
 
-node* buildTree(node* root){
-    cout<<"Enter data"<<endl;
-    int d;
-    cin>>d;
-    root = new node(d);
-    if(d==-1){
-        return NULL;
-    }
-    cout<<"Enter left child of "<<d<<endl;
-    root->left = buildTree(root->left);
-    cout<<"Enter right child of "<<d<<endl;
-    root->right = buildTree(root->right);
-    return root;
+node* build_tree(node* root){
+cout<<"Enter the number in root: ";
+int data;
+cin>>data;
+root=new node(data);
+if(data==-1){
+    return NULL;
+}
+cout<<"Enter element to left: "<<endl;
+root->left=build_tree(root->left);
+cout<<"Enter element to right"<<endl;
+root->right=build_tree(root->right);
+return root;
 
 }
 
-//Create a tree
 int main(){
     node* root=NULL;
+    root=build_tree(root);
 
-    // creating a tree
-    root=buildTree(root);{
 
-    }
-
-    
-
-    return 0;
-    
-
-    
 }
