@@ -16,6 +16,7 @@ class node{
 
 
 };
+///
 
 node* build_tree(node* root){
     cout<<"Enter the data: ";
