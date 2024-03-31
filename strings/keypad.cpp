@@ -16,6 +16,7 @@ int main() {
         { 't', 'u', 'v' },
         { 'w', 'x', 'y', 'z' }
     };
+    //
 
     // Loop through the array of vectors
     for (int i = 0; i < 10; i++) { // Loop from 0 to 9
