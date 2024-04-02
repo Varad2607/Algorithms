@@ -8,7 +8,7 @@ class node{
   node* right;
 
 
-//Constructor
+//Constructor_1
   node (int val){
     this->data=val;
     this->left=NULL;
