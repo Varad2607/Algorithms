@@ -4,12 +4,10 @@ using namespace std;
 
 class Node{
     public:
-
-
         int data;
         Node* left;
         Node* right;
-
+//change
     Node(int val){
         this->data=val;
         this->left=NULL;
@@ -44,16 +42,28 @@ class Node{
     void level_order_traversal(Node* root){
         queue<Node*>q;
         q.push(root);
+        q.push(NULL);
         while(!q.empty()){
             Node* temp=q.front();
             cout<<temp->data<<" ";
             q.pop();
-            if(temp->left){
+            if(temp=NULL){
+                cout<<endl;
+                if (!q.empty()){
+                    q.push(NULL);
+                }
+            }
+            else{
+                cout<<temp->data<<" ";
+                if(temp->left){
                 q.push(temp->left);
             }
              if(temp->right){
                 q.push(temp->right);
             }
+
+            }
+            
 
         }
 
