@@ -31,7 +31,11 @@ node* build_tree(node *root){
     return root;
 
 
-
+///Constructor_2
+    node(int val,node* left,node* right){
+        this->data=val;
+        this->left=left;
+        this->right=right;
 
 
 }
