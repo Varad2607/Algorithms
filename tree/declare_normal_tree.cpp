@@ -9,7 +9,7 @@ class Node{
     Node* right;
 
     Node(int val){
-        int data=val;
+        this->data=val;
         this->left=NULL;
         this->right=NULL;
     }
@@ -34,25 +34,42 @@ Node* build_tree(Node* root){
 void level_order_traversal(Node* root){
     queue<Node*>q;
     q.push(root);
+    q.push(NULL);
 
     while(!q.empty()){
         Node* temp=q.front();
-        cout<<temp->data<<endl<<" ";
         q.pop();
 
-        if(temp->left){
+        if(temp==NULL){
+            cout<<endl;
+            if(!q.empty ()){
+                q.push(NULL);
+
+            }
+            
+        }
+        else{
+            cout<<temp->data<<" ";
+            if(temp->left){
             q.push(temp->left);
         }
-        if(temp->right){
+            if(temp->right){
             q.push(temp->right);
         }
+        }
+
+       
     }
 
 }
 
 int main(){
     Node* root=NULL;
-    root=build_tree(root);
+    root=build_tree(root); 
+    // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
+    level_order_traversal(root);
+
+
      
 
 }
