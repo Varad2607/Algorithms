@@ -14,7 +14,7 @@ class Node{
     }
 
     Node* build_tree(Node* root){
-        cout<<"Enter the number in the root: ";
+        cout<<"Enter the number in the root: "<<endl;
         int data;
         cin>>data;
         root=new Node(data);
