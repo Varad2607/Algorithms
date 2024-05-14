@@ -2,24 +2,25 @@
 #include<queue>
 using namespace std;
 
-class Node{
+class node{
     public:
     int data;
-    Node* left;
-    Node* right;
+    node* left;
+    node* right;
 
-    Node(int val){
+    node(int val){
         this->data=val;
         this->left=NULL;
         this->right=NULL;
     }
 };
 
-Node* build_tree(Node* root){
+node* build_tree(node* root){
     cout<<"Enter the data number: "<<endl;
     int data;
     cin>>data;
-    root=new Node(data);
+    root=new node(data);
+    //base case
     if(data==-1){
         return NULL;
     }
@@ -31,13 +32,13 @@ Node* build_tree(Node* root){
 
 } 
 
-void level_order_traversal(Node* root){
-    queue<Node*>q;
+void level_order_traversal(node* root){
+    queue<node*>q;
     q.push(root);
     q.push(NULL);
 
     while(!q.empty()){
-        Node* temp=q.front();
+        node* temp=q.front();
         q.pop();
 
         if(temp==NULL){
@@ -62,12 +63,56 @@ void level_order_traversal(Node* root){
     }
 
 }
+//Inorder traversal(LNR)
+void inorder_travel(node* root){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    inorder_travel(root->left);
+    cout<<root->data<<" ";
+    inorder_travel(root->right);
+}
+//[reorder(NLR)
+void preorder_travel(node* root){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preorder_travel(root->left);
+    preorder_travel(root->right);
+
+}
+
+//Postorder traversal(LRN)
+void postorder_travel(node* root){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    postorder_travel(root->left);
+    postorder_travel(root->right);
+    cout<<root->data<<" ";
+} 
+
+
+node* build_from_level_order(node* root){
+    
+}
 
 int main(){
-    Node* root=NULL;
+    node* root=NULL;
     root=build_tree(root); 
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
     level_order_traversal(root);
+    cout<<endl;
+    inorder_travel(root);
+    cout<<endl;
+    preorder_travel(root);
+    cout<<endl;
+    postorder_travel(root);
+    return 0;
 
 
      
