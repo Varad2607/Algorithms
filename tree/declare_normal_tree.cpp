@@ -2,6 +2,7 @@
 #include<queue>
 using namespace std;
 // 4 methods of tree traversal
+/////
 class node{
     public:
     int data;
