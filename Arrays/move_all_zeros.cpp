@@ -5,6 +5,7 @@ using namespace std;
 
 
 void move_zeros(int n,int arr[]){
+    //At this index the non zero value should be there
     int non_zero=0;
     for(int i=0;i<n;i++){
         if(arr[i]!=0){
