@@ -24,6 +24,6 @@ int main(){
         cin>>arr[i];
 
     }
-    largest_element(arr)
+    largest_element(arr);
 
 }
