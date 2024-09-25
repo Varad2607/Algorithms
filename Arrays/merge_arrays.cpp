@@ -6,6 +6,6 @@ int main(){
     int n;
     vector<int>arr;
     for(int i=0;i<n;i++){
-        arr.pus
+        // arr.pus
     }
 }
