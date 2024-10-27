@@ -1,18 +1,23 @@
 #include <iostream>
-#include <string>
-
+#include <iomanip> // for setw
 using namespace std;
 
+void staircase(int n) {
+  for (int i = 0; i < n; i++) {
+      // Print (n - i - 1) spaces
+      cout << string(n - i - 1, ' ');
 
-int main(){
-    int n;
-    cin>>n;
-    int num=1;
+      // Print (i + 1) '#' symbols
+      cout << string(i + 1, '#') << endl;
+  }
+}
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<num++;
-        }
-        cout<<endl;
-    }
+int main() {
+  int n;
+  cin >> n;
+
+  // Call the staircase function to print the staircase
+  staircase(n);
+
+  return 0;
 }
