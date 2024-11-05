@@ -3,7 +3,7 @@ class Solution:
     def __init__(self) -> None:
         pass
 
-    def max_ballons(self,text:str):
+    def max_ballons(self,text:str)->int:
         # pylint: disable=missing-function-docstring
         count_char={}
         for char in text:
@@ -13,18 +13,19 @@ class Solution:
                 count_char[char]+=1
         
         required_items={'b':1,'a':1,'l':2,'o':2,'n':1}
+        max_balloons=float('inf')
 
         for char, required in required_items.items():
-            if char is count_char:
+            if char in count_char:
                 max_balloons=min(max_balloons,count_char[char]/required)
             else:
                 return 0
-        return max_balloons
+        return int(max_balloons)
 
 
 
 if __name__ == "__main__":
     s=Solution()
-    s.max_ballons('nblaodo')
+    print(s.max_ballons('nlaebolko'))
 
 
