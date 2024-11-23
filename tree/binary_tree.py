@@ -98,21 +98,29 @@ class Node:
         return 1 + max_height
 
 
-    def diamter_of_tree(self):
-        if self is None:
+    def diameter_tree(self):
+        if not self:
             return 0
 
-        diameter_left=self.left.diameter_left()
-        diameter_right=self.right.diamter_right()
-        diamter_left_right=self.left.height_of_tree()+self.right.height_of_tree()
+        dia_left=self.left.diameter()
+        dia_right=self.right.diameter()
 
-        return max(diameter_left,max(diameter_left,diameter_right))
+        dia_root=self.left.height_of_tree_self.right.height_of_tree()+1
 
-
-
+        return max(dia_root,max(dia_left,dia_right))
 
 
-        pass
+
+
+
+    
+
+    
+
+
+
+
+       
 
 
 
