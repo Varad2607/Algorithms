@@ -1,4 +1,5 @@
 import queue
+from collections import deque
 
 
 
@@ -108,6 +109,182 @@ class Node:
         dia_root=self.left.height_of_tree_self.right.height_of_tree()+1
 
         return max(dia_root,max(dia_left,dia_right))
+    
+    def diameter_fast(self):
+        if self is None:
+            return (0,0)
+        
+        left=self.left.diameter_fast()
+        right=self.right.diameter_fast()
+
+        option1=left[0]
+        option2=right[0]
+        option3=left[1]+right[1]+1
+
+        
+        current_diameter=max(option1,max(option2,option3))
+        current_height=max(left[1],right[1])+1
+
+        return (current_diameter,current_height)
+
+    class TreeInfo:
+        def __init__(self,dia,height):
+            self.dia=dia
+            self.height=height
+
+    def diameter_fast(self):
+        if self is None:
+            return (0,0)
+
+        left=self.left.diameter_fast()
+        right=self.right.diameter_fast()
+
+        option1=left[0]
+        option2=right[0]
+        option3=left[1]+right[1]
+
+        current_diameter=max(option1,max(option2,option3))
+        current_height=max(left[1],right[1])+1
+
+        return Node.TreeInfo(current_diameter,current_height)
+
+    def zigzag_traversal(self):
+        if self is None:
+            return None
+
+        q=queue.Queue()
+        q.put(self)
+        q.put(None)
+        left_to_right=True
+
+        while q is not q.empty():
+            current_node=q.pop()
+            
+            if current_node==None:
+                left_to_right=False
+                if q.empty():
+                    break
+                else:
+                    q.put(None)
+            else:
+                print(current_node)
+                if left_to_right:
+                    if current_node.left:
+                        q.put(current_node.left)
+                    if current_node.right:
+                        q.put(current_node.right)
+                    left_to_right=False
+                else:
+                    if current_node.right:
+                        q.put(current_node.right)
+                    if current_node.left:
+                        q.put(current_node.left)
+
+
+    def zigzag_traversal(root):
+        if not root:
+            return []
+
+        result = []
+        q = deque()
+        q.append(root)
+        left_to_right = True
+
+        while q:
+            size = len(q)
+            level = [0] * size  # Temporary storage for the current level
+
+            for i in range(size):
+                node = q.popleft()
+
+                # Determine where to place the value in the level list
+                index = i if left_to_right else size - 1 - i
+                level[index] = node.val
+
+                # Add cifhild nodes to the queue
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            # Add the level to the result
+            result.extend(level)
+            # Flip the direction
+            left_to_right = not left_to_right
+
+        return result
+
+
+    def print_left_boundary(self):
+        if self:
+            if self.left:
+                pass
+                
+
+
+
+
+    def print_leaves(self,result):
+        pass
+    def print_right_boundary(self,result):
+        pass
+    def boundary_traversal(self):
+        if not self:
+            return []
+        self.result=[]
+
+        # Add root node to the list
+        if self.left or self.right:
+            self.result.append(self.value)
+        
+        self.print_left_boundary(self)
+        self.print_leaves(self,)
+        self.print_right_boundary(self,)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+            
+
+
+    
+
+
+
+
+
+        
+
+
+
+
+
+
+    
+        
+
+
 
 
 
