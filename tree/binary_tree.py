@@ -218,16 +218,30 @@ class Node:
     def print_left_boundary(self):
         if self:
             if self.left:
-                pass
-                
+                self.result.append(self.value)
+                self.print_left_boundary(self.left)
+            elif self.right:
+                self.result.append(self.value)
+                self.print_left_boundary(self.right)
+
+    def print_leaves(self):
+        if self:
+            self.print_leaves(self.left)
+        if not self.left and not self.right:
+            self.result.append(self.value)
+        self.print_leaves(self.right)
+  
+
+    def print_right_boundary(self):
+        if self:
+            if self.right:
+                self.print_right_boundary(self.right)
+                self.result.append(self.value)
+            elif self.left:
+                self.print_right_boundary(self.left)
+                self.result(self.value)
 
 
-
-
-    def print_leaves(self,result):
-        pass
-    def print_right_boundary(self,result):
-        pass
     def boundary_traversal(self):
         if not self:
             return []
@@ -238,8 +252,8 @@ class Node:
             self.result.append(self.value)
         
         self.print_left_boundary(self)
-        self.print_leaves(self,)
-        self.print_right_boundary(self,)
+        self.print_leaves(self)
+        self.print_right_boundary(self)
 
 
 
