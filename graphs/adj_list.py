@@ -16,10 +16,11 @@ class Graph:
 
 
     def print_adjlist(self):
-        print("Node | Neighbors")
-        print("-" * 20)
         for key, value in self.adj.items():
-            print(f"{key:1} | {', '.join(map(str, value))}")
+            print(f"Node {key}:")
+            for neighbor in value:
+                print(f"  Neighbor: {neighbor}")
+
 
 
 
