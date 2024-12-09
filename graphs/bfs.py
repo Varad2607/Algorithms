@@ -1,12 +1,14 @@
 from typing import List
 from collections import deque
 
+
 class Solution:
     def bfs_of_graph(self,adj:List[List[int]])->List[int]:
         visited_node={}
 
         for i in range (len(adj)):
             visited_node[i]=False
+
         
         q=deque()
         ans=[]
