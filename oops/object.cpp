@@ -1,11 +1,16 @@
 #include <iostream>
 using namespace std;
 
-class hero{
+class Hero{
 
     private:
         int health;
     public:
+
+    Hero (){
+        cout<<"SImple"<<endl;
+    }
+        
         // properties
         char name[100];
         char level;
@@ -37,16 +42,13 @@ class hero{
 
 };
 
-int main(){
+int main(){  
+
+    Hero onkar;
 
 
-
-    //created object of hero
-    hero h1;
 
 
 
 }
 
-//getter
-//setter

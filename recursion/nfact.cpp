@@ -4,10 +4,10 @@ using namespace std;
 int factorial(int n){
     int c;
     if (n==0){
-        return 1;
+        return 0;
     }
 
-    c=n*factorial(n-1);
+    c=n+factorial(n-1);
 
     return c;
 
